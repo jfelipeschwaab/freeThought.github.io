@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-import { AddThoughtForm } from './AddThoughtForm';
+import { AddThoughtForm } from './addThoughtForm.js';
 import { Thought } from './Thought';
 import { generateId, getNewExpirationTime } from './utilities';
+import './bundle.css';
 
 export default function App() {
   const [thoughts, setThoughts] = useState([
@@ -19,19 +19,34 @@ export default function App() {
   ]);
 
   const addThought = (thought) => {
+    setThoughts((prev) => [thought, ...prev]);
+  };
 
-  }
+  const removeThought = (thoughtIdToRemove) => {
+    setThoughts((prevThoughts) =>
+      prevThoughts.filter((thought) => thought.id !== thoughtIdToRemove)
+    );
+  };
 
   return (
     <div className="App">
       <header>
-        <h1>Passing Thoughts</h1>
+        <h1>
+          <span role="img" aria-label="thought">
+            ☁️
+          </span>{' '}
+          Passing Thoughts
+        </h1>
       </header>
       <main>
-        <AddThoughtForm />
+        <AddThoughtForm addThought={addThought} />
         <ul className="thoughts">
           {thoughts.map((thought) => (
-            <Thought key={thought.id} thought={thought} />
+            <Thought
+              key={thought.id}
+              thought={thought}
+              removeThought={removeThought}
+            />
           ))}
         </ul>
       </main>

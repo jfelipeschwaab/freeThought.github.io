@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f9f9f9;
+  }
+  
+  .App {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 400px;
+  }
+  
+  header h1 {
+    margin: 0 0 20px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  header h1 span {
+    margin-right: 10px;
+  }
+  
+  .AddThoughtForm {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .AddThoughtForm input[type='text'] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .AddThoughtForm input[type='submit'] {
+    padding: 10px 20px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .AddThoughtForm input[type='submit']:hover {
+    background: #0056b3;
+  }
+  
+  .thoughts {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .Thought {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f1f1f1;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .Thought .remove-button {
+    border: none;
+    background: transparent;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .Thought .text {
+    flex: 1;
+    margin-left: 10px;
+  }
+  
